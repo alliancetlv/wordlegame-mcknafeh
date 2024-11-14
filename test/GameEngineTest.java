@@ -70,7 +70,7 @@ class GameEngineTest {
         assertTrue(gameEngine.isGameOver(), "Game should be over after one correct guess");
 
         // Check that the player has won
-        assertTrue(gameEngine.isWin(), "Player should win after guessing the correct word");
+        assertTrue(gameEngine.getIsWin(), "Player should win after guessing the correct word");
 
         // Check the feedback
         assertEquals("*****", feedback, "Feedback should indicate all correct letters");
@@ -91,7 +91,7 @@ class GameEngineTest {
 
         // Game should be over, and the player should have won
         assertTrue(game.isGameOver());
-        assertTrue(game.isWin());  // Ensure the game was won
+        assertTrue(game.getIsWin());  // Ensure the game was won
         assertEquals("*****", feedback);  // Check correct feedback
     }
 
@@ -106,7 +106,7 @@ class GameEngineTest {
 
         // Game should be over and the player should have lost
         assertTrue(game.isGameOver());
-        assertFalse(game.isWin(), "Made " + numOfAttempts +" attempts. The game should be over.");  // Ensure the game was lost
+        assertFalse(game.getIsWin(), "Made " + numOfAttempts +" attempts. The game should be over.");  // Ensure the game was lost
     }
 }
 
